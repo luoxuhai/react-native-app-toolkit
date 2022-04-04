@@ -1,6 +1,7 @@
-# react-native-app-toolkit
-
-React Native App Toolkit, a high quality react-native toolkit.
+<div align="center">
+  <h1 align="center">react-native-app-toolkit</h1>
+  <h3 align="center">A high quality react-native toolkit.</h3>
+</div>
 
 English | [简体中文](./README-zh_CN.md)
 
@@ -60,6 +61,16 @@ Toolkit.getVideoThumbnail(
 | **width**  | number | Width of the created image.  |
 | **height** | number | Height of the created image. |
 | **size**   | number | Size of the created image.   |
+
+### setAppearanceColorScheme(colorScheme:string | null): Promise<void>
+
+Override the app's color scheme (light / dark / unspecified).
+
+```javascript
+import * as Toolkit from 'react-native-app-toolkit';
+
+Toolkit.setAppearanceColorScheme('dark'); // 'dark' | 'light' | null
+```
 
 ## Contributing
 

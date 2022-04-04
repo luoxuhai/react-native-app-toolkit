@@ -1,6 +1,7 @@
-# react-native-app-toolkit
-
-React Native App Toolkit, 一个高质量的 react-native 工具库。
+<div align="center">
+  <h1 align="center">react-native-app-toolkit</h1>
+  <h3 align="center">一个高质量的 react-native 工具库。</h3>
+</div>
 
 ## 入门
 
@@ -57,6 +58,16 @@ Toolkit.getVideoThumbnail(
 | **width**  | number | 图像的宽度     |
 | **height** | number | 图像的高度     |
 | **size**   | number | 图像文件大小   |
+
+### setAppearanceColorScheme(colorScheme:string | null): Promise<void>
+
+覆盖应用程序的配色方案（浅色/深色/默认）。
+
+```javascript
+import * as Toolkit from 'react-native-app-toolkit';
+
+Toolkit.setAppearanceColorScheme('dark'); // 'dark' | 'light' | null
+```
 
 ## 贡献
 

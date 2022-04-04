@@ -1,4 +1,4 @@
-import { NativeModules, Platform } from 'react-native';
+import { NativeModules, Platform, ColorSchemeName } from 'react-native';
 
 const LINKING_ERROR =
   `The package 'react-native-app-toolkit' doesn't seem to be linked. Make sure: \n\n` +
@@ -22,4 +22,10 @@ export function getVideoThumbnail(
   options?: VideoThumbnailOptions
 ): Promise<VideoThumbnailResult> {
   return RNToolkit.getVideoThumbnail(path, options);
+}
+
+export function setAppearanceColorScheme(
+  colorsSchemeName: ColorSchemeName
+): Promise<void> {
+  return RNToolkit.setAppearanceColorScheme(colorsSchemeName);
 }
