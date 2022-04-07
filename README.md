@@ -1,11 +1,13 @@
 <div align="center">
-  <h1 align="center">react-native-app-toolkit</h1>
-  <h3 align="center">A high quality react-native toolkit.</h3>
+  <h1 align="center">⚡️ + 🔨 React Native App Toolkit</h1>
+  <h3 align="center">High-quality toolkit for React Native using native code.</h3>
 </div>
 
 English | [简体中文](./README-zh_CN.md)
 
-## Getting started
+🚧 Currently only supports iOS 🚧
+
+## Installation
 
 If you are using `react-native >= 0.60` you just need to do a simple:
 
@@ -23,54 +25,15 @@ After that, we need to install the dependencies to use the project on iOS(you ca
 
 Now run a simple: `npx pod-install` or `cd ios && pod install`. After that, you should be able to use the library on both Platforms, iOS and Android.
 
-## API
+## Documentation
 
-### getVideoThumbnail(path:string, options?: VideoThumbnailOptions): Promise<VideoThumbnailsResult>
+- [Getting Started](https://luoxuhai.github.io/react-native-app-toolkit/docs/getting-started)
+- [Components Reference](https://luoxuhai.github.io/react-native-app-toolkit/docs/components/quick-look-view)
+- [API Reference](https://luoxuhai.github.io/react-native-app-toolkit/docs/api/get-video-thumbnail)
 
-Allows you to generate images from video files to use as thumbnails
+## Community
 
-```javascript
-import * as Toolkit from 'react-native-app-toolkit';
-
-Toolkit.getVideoThumbnail(
-  'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-  {
-    time: 1000, // ms
-    quality: 0.8,
-  }
-).then((res) => {
-  // VideoThumbnailsResult
-});
-```
-
-#### `VideoThumbnailsOptions`
-
-| Name            | Type    | Description                                                                                                                                                       |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **quality**     | number  | A value in range 0.0 - 1.0 specifying quality level of the result image. 1 means no compression (highest quality) and 0 the highest compression (lowest quality). |
-| **time**        | number  | The time position where the image will be retrieved in ms.                                                                                                        |
-| **includeSize** | boolean | Include image file size                                                                                                                                           |
-| **headers**     | object  | In case sourceFilename is a remote URI, headers object is passed in a network request.                                                                            |
-|                 |
-
-#### `VideoThumbnailsResult`
-
-| Name       | Type   | Description                  |
-| ---------- | ------ | ---------------------------- |
-| **uri**    | string | uri to the created image.    |
-| **width**  | number | Width of the created image.  |
-| **height** | number | Height of the created image. |
-| **size**   | number | Size of the created image.   |
-
-### setAppearanceColorScheme(colorScheme:string | null): Promise<void>
-
-Override the app's color scheme (light / dark / unspecified).
-
-```javascript
-import * as Toolkit from 'react-native-app-toolkit';
-
-Toolkit.setAppearanceColorScheme('dark'); // 'dark' | 'light' | null
-```
+- [Discussions](https://github.com/luoxuhai/react-native-app-toolkit/discussions)
 
 ## Contributing
 
@@ -78,4 +41,4 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 ## License
 
-MIT
+[MIT](/LICENSE)

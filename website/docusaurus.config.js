@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'react-native-app-toolkit',
-  tagline: 'Dinosaurs are cool',
+  title: 'React Native App Toolkit',
+  tagline: 'High-quality toolkit for React Native using native code.',
   url: 'https://luoxuhai.github.com',
   baseUrl: '/react-native-app-toolkit/',
   onBrokenLinks: 'throw',
@@ -24,12 +24,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
@@ -53,11 +47,10 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'getting-started',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/luoxuhai/react-native-app-toolkit',
             label: 'GitHub',
@@ -72,28 +65,28 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Installation',
+                to: '/docs/getting-started',
               },
             ],
           },
-          // {
-          //   title: 'Community',
-          //   items: [
-          //     {
-          //       label: 'Stack Overflow',
-          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-          //     },
-          //     {
-          //       label: 'Discord',
-          //       href: 'https://discordapp.com/invite/docusaurus',
-          //     },
-          //     {
-          //       label: 'Twitter',
-          //       href: 'https://twitter.com/docusaurus',
-          //     },
-          //   ],
-          // },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Discussions',
+                href: 'https://github.com/luoxuhai/react-native-app-toolkit/discussions',
+              },
+              {
+                label: 'Issues',
+                href: 'https://github.com/luoxuhai/react-native-app-toolkit/issues',
+              },
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/react-native-app-toolkit',
+              },
+            ],
+          },
           {
             title: 'More',
             items: [
@@ -101,10 +94,14 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/luoxuhai/react-native-app-toolkit',
               },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/LuoXuhai',
+              },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} luoxuhai. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

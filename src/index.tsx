@@ -1,5 +1,7 @@
 import { NativeModules, Platform, ColorSchemeName } from 'react-native';
 
+import QuickLookView from './components/QuickLookView';
+
 const LINKING_ERROR =
   `The package 'react-native-app-toolkit' doesn't seem to be linked. Make sure: \n\n` +
   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
@@ -29,3 +31,5 @@ export function setAppearanceColorScheme(
 ): Promise<void> {
   return RNToolkit.setAppearanceColorScheme(colorsSchemeName);
 }
+
+export { QuickLookView };

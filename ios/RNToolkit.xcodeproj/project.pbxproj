@@ -6,6 +6,11 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6A927FE785100D4A694 /* RNQuickLookView.m */; };
+		35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C7E6A927FE785100D4A694 /* RNQuickLookView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookView.m; sourceTree = "<group>"; };
+		35C7E6AC27FE787B00D4A694 /* RNQuickLookView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNQuickLookView.h; sourceTree = "<group>"; };
+		35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookManager.m; sourceTree = "<group>"; };
+		35C7E6AF27FE78A600D4A694 /* RNQuickLookManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNQuickLookManager.h; sourceTree = "<group>"; };
 		35DB305827EF6D1F00D84FE3 /* RNMediaLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNMediaLibrary.m; sourceTree = "<group>"; };
 		35DB305927EF6D3A00D84FE3 /* RNMediaLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNMediaLibrary.h; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNToolkit.h; sourceTree = "<group>"; };
@@ -45,9 +54,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		35C7E6B327FE799700D4A694 /* RNQuickLookView */ = {
+			isa = PBXGroup;
+			children = (
+				35C7E6A927FE785100D4A694 /* RNQuickLookView.m */,
+				35C7E6AC27FE787B00D4A694 /* RNQuickLookView.h */,
+				35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */,
+				35C7E6AF27FE78A600D4A694 /* RNQuickLookManager.h */,
+			);
+			path = RNQuickLookView;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				35C7E6B327FE799700D4A694 /* RNQuickLookView */,
 				35DB305927EF6D3A00D84FE3 /* RNMediaLibrary.h */,
 				35DB305827EF6D1F00D84FE3 /* RNMediaLibrary.m */,
 				B3E7B5881CC2AC0600A0062D /* RNToolkit.h */,
@@ -113,6 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */,
+				35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
