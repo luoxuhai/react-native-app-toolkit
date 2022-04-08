@@ -2,7 +2,7 @@
 //  RNQuickLookView.m
 //  RNToolkit
 //
-//  Created by 罗绪海 on 2022/4/7.
+//  Created by 罗绪海 on 2022/4/3.
 //
 
 #import <QuickLook/QuickLook.h>
@@ -10,7 +10,6 @@
 
 @interface RNQuickLookView () <QLPreviewControllerDataSource, QLPreviewControllerDelegate>
 
-@property UIView* previewView;
 @property QLPreviewController* controller;
 
 @end
@@ -30,11 +29,9 @@
     self.controller = [[QLPreviewController alloc] init];
     self.controller.delegate = self;
     self.controller.dataSource = self;
-    self.previewView = self.controller.view;
-    self.previewView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.controller.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.controller.view.backgroundColor = UIColor.blackColor;
-    self.controller.automaticallyAdjustsScrollViewInsets = NO;
-    [self addSubview:self.previewView];
+    [self addSubview:self.controller.view];
 }
 
 - (id)initWithPreviewItemUrl:(NSString*)url {

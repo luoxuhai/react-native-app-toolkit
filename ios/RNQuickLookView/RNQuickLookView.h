@@ -7,10 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RNQuickLookView : UIView {
-    NSString* _url;
-}
+@interface RNQuickLookView : UIView
 
-- (id)initWithPreviewItemUrl:(NSString*)url;
+@property (nonatomic, copy) NSString *url;
 
 @end

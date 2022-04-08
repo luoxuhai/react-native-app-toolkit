@@ -18,6 +18,5 @@ RCT_EXPORT_MODULE(RNQuickLookView)
 }
 
 RCT_EXPORT_VIEW_PROPERTY(url, NSString)
-RCT_EXPORT_VIEW_PROPERTY(assetFileName, NSString)
 
 @end
