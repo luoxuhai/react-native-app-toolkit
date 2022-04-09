@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35B14B47280188EC009B3E6D /* RNDocumentCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B46280188EC009B3E6D /* RNDocumentCamera.m */; };
 		35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6A927FE785100D4A694 /* RNQuickLookView.m */; };
 		35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		35B14B45280188D8009B3E6D /* RNDocumentCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNDocumentCamera.h; sourceTree = "<group>"; };
+		35B14B46280188EC009B3E6D /* RNDocumentCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNDocumentCamera.m; sourceTree = "<group>"; };
 		35C7E6A927FE785100D4A694 /* RNQuickLookView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookView.m; sourceTree = "<group>"; };
 		35C7E6AC27FE787B00D4A694 /* RNQuickLookView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNQuickLookView.h; sourceTree = "<group>"; };
 		35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookManager.m; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				35B14B46280188EC009B3E6D /* RNDocumentCamera.m */,
+				35B14B45280188D8009B3E6D /* RNDocumentCamera.h */,
 				35C7E6B327FE799700D4A694 /* RNQuickLookView */,
 				35DB305927EF6D3A00D84FE3 /* RNMediaLibrary.h */,
 				35DB305827EF6D1F00D84FE3 /* RNMediaLibrary.m */,
@@ -136,6 +141,7 @@
 			files = (
 				35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */,
 				35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */,
+				35B14B47280188EC009B3E6D /* RNDocumentCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 align="center">⚡️ + 🔨 React Native App Toolkit</h1>
+  <h1 align="center">⚡️ + 📱 React Native App Toolkit</h1>
   <h3 align="center">High-quality toolkit for React Native using native code.</h3>
 </div>
 

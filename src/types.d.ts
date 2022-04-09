@@ -29,3 +29,21 @@ interface VideoThumbnailResult {
   height?: number;
   size?: number;
 }
+
+type DocumentCameraResultType = 'pdf' | 'image';
+
+interface DocumentCameraOptions {
+  /**
+   * @default 'pdf'
+   */
+  type?: DocumentCameraResultType;
+  /**
+   * @default 1
+   */
+  quality?: number;
+}
+
+interface DocumentCameraResult {
+  type: DocumentCameraResultType;
+  source: string | string[];
+}

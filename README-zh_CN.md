@@ -1,7 +1,11 @@
 <div align="center">
-  <h1 align="center">⚡️ + 🔨 React Native App Toolkit</h1>
+  <h1 align="center">⚡️ + 📱 React Native App Toolkit</h1>
   <h3 align="center">一个高质量的 react-native 工具库。</h3>
 </div>
+
+[English](https://github.com/luoxuhai/react-native-app-toolkit#%EF%B8%8F---react-native-app-toolkit) | 简体中文
+
+🚧 当前只支持 iOS 平台 🚧
 
 ## 入门
 
@@ -21,53 +25,15 @@ npm i react-native-app-toolkit --save
 
 现在运行一个简单的: `npx pod-install` 或 `cd ios && pod install`. 之后，您应该能够在平台、iOS 和 Android 上使用该库。
 
-## API
+## 文档
 
-### getVideoThumbnail(path:string, options?: VideoThumbnailOptions): Promise<VideoThumbnailsResult>
+- [入门](https://luoxuhai.github.io/react-native-app-toolkit/docs/getting-started)
+- [组件参考](https://luoxuhai.github.io/react-native-app-toolkit/docs/components/quick-look-view)
+- [API 参考](https://luoxuhai.github.io/react-native-app-toolkit/docs/api/get-video-thumbnail)
 
-允许您从视频文件生成图像以用作缩略图
+## 社区
 
-```javascript
-import * as Toolkit from 'react-native-app-toolkit';
-
-Toolkit.getVideoThumbnail(
-  'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-  {
-    time: 1000, // ms
-    quality: 0.8,
-  }
-).then((res) => {
-  // VideoThumbnailsResult
-});
-```
-
-#### `VideoThumbnailsOptions`
-
-| 名称            | 类型    | 描述                             |
-| --------------- | ------- | -------------------------------- |
-| **quality**     | number  | 输出图像质量                     |
-| **time**        | number  | 截取时间点, ms                   |
-| **includeSize** | boolean | 返回的结果中是否包含图像文件大小 |
-| **headers**     | object  | 网络视频资源的请求头             |
-
-#### `VideoThumbnailsResult`
-
-| 名称       | 类型   | 描述           |
-| ---------- | ------ | -------------- |
-| **uri**    | string | 创建图像的 uri |
-| **width**  | number | 图像的宽度     |
-| **height** | number | 图像的高度     |
-| **size**   | number | 图像文件大小   |
-
-### setAppearanceColorScheme(colorScheme:string | null): Promise<void>
-
-覆盖应用程序的配色方案（浅色/深色/默认）。
-
-```javascript
-import * as Toolkit from 'react-native-app-toolkit';
-
-Toolkit.setAppearanceColorScheme('dark'); // 'dark' | 'light' | null
-```
+- [Discussions](https://github.com/luoxuhai/react-native-app-toolkit/discussions)
 
 ## 贡献
 
@@ -75,4 +41,4 @@ Toolkit.setAppearanceColorScheme('dark'); // 'dark' | 'light' | null
 
 ## 开源协议
 
-MIT
+[MIT](/LICENSE)

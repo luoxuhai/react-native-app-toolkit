@@ -9,27 +9,20 @@ static NSString* const OPTIONS_KEY_INCLUDE_SIZE = @"includeSize";
 static NSString* const TMP_DIRECTORY = @"react-native-kit/";
 static NSString* const OPTIONS_KEY_HEADERS = @"headers";
 
+@interface RNMediaLibrary()
+
+@property (nonatomic, copy) NSString *directory;
+
+@end
+
 @implementation RNMediaLibrary
 
 -(id)init {
-    [self initTempDir];
+    self.directory = [NSTemporaryDirectory() stringByAppendingString:TMP_DIRECTORY];
     return self;
 }
 
--(void)initTempDir {
-    self.directory = [NSTemporaryDirectory() stringByAppendingString:TMP_DIRECTORY];
-    NSFileManager *fileManager = [[NSFileManager alloc] init];
-    
-    BOOL isDir = YES;
-    BOOL exists = [fileManager fileExistsAtPath:self.directory isDirectory:&isDir];
-    if (!exists) {
-        [fileManager createDirectoryAtPath: self.directory
-                                  withIntermediateDirectories:YES attributes:nil error:nil];
-     }
-}
-
--(NSDictionary *)getVideoThumbnail:(nonnull NSString *)path
-withOptions:(NSDictionary *)options
+-(NSDictionary *)getVideoThumbnail:(nonnull NSString *)path withOptions:(nullable NSDictionary *)options
 {
     NSURL *url = [NSURL URLWithString:path];
     long timeOption = [options[OPTIONS_KEY_TIME] integerValue] ?: 0;

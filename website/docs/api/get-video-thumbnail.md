@@ -2,7 +2,7 @@
 
 Allows you to generate images from video files to use as thumbnails
 
-```javascript
+```typescript
 import * as Toolkit from 'react-native-app-toolkit';
 
 Toolkit.getVideoThumbnail(

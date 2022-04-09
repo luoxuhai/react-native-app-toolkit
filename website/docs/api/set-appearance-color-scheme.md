@@ -2,7 +2,7 @@
 
 Override the app's color scheme (light / dark / unspecified).
 
-```javascript
+```typescript
 import * as Toolkit from 'react-native-app-toolkit';
 
 Toolkit.setAppearanceColorScheme('dark'); // 'dark' | 'light' | null

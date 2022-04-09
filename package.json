@@ -1,7 +1,7 @@
 {
   "name": "react-native-app-toolkit",
   "version": "0.2.1",
-  "description": "High quality react-native toolkit.",
+  "description": "High-quality toolkit for React Native using native code.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
