@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35B14B47280188EC009B3E6D /* RNDocumentCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B46280188EC009B3E6D /* RNDocumentCamera.m */; };
+		35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B4D2803C0F3009B3E6D /* MBProgressHUD.m */; };
 		35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6A927FE785100D4A694 /* RNQuickLookView.m */; };
 		35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,13 @@
 		134814201AA4EA6300B7C361 /* libRNToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B14B45280188D8009B3E6D /* RNDocumentCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNDocumentCamera.h; sourceTree = "<group>"; };
 		35B14B46280188EC009B3E6D /* RNDocumentCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNDocumentCamera.m; sourceTree = "<group>"; };
+		35B14B492803C0F3009B3E6D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../MBProgressHUD/LICENSE; sourceTree = "<group>"; };
+		35B14B4A2803C0F3009B3E6D /* Framework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Framework-Info.plist"; path = "../../../MBProgressHUD/Framework-Info.plist"; sourceTree = "<group>"; };
+		35B14B4B2803C0F3009B3E6D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ../../../MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
+		35B14B4C2803C0F3009B3E6D /* Framework-tvOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Framework-tvOS-Info.plist"; path = "../../../MBProgressHUD/Framework-tvOS-Info.plist"; sourceTree = "<group>"; };
+		35B14B4D2803C0F3009B3E6D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../../../MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		35B14B4E2803C0F3009B3E6D /* MBProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD-Prefix.pch"; path = "../../../MBProgressHUD/MBProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		35B14B4F2803C0F3009B3E6D /* MBProgressHUD.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MBProgressHUD.podspec; path = ../../../MBProgressHUD/MBProgressHUD.podspec; sourceTree = "<group>"; };
 		35C7E6A927FE785100D4A694 /* RNQuickLookView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookView.m; sourceTree = "<group>"; };
 		35C7E6AC27FE787B00D4A694 /* RNQuickLookView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNQuickLookView.h; sourceTree = "<group>"; };
 		35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookManager.m; sourceTree = "<group>"; };
@@ -57,6 +65,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		35B14B482803C0C6009B3E6D /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				35B14B4A2803C0F3009B3E6D /* Framework-Info.plist */,
+				35B14B4C2803C0F3009B3E6D /* Framework-tvOS-Info.plist */,
+				35B14B492803C0F3009B3E6D /* LICENSE */,
+				35B14B4E2803C0F3009B3E6D /* MBProgressHUD-Prefix.pch */,
+				35B14B4B2803C0F3009B3E6D /* MBProgressHUD.h */,
+				35B14B4D2803C0F3009B3E6D /* MBProgressHUD.m */,
+				35B14B4F2803C0F3009B3E6D /* MBProgressHUD.podspec */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		35C7E6B327FE799700D4A694 /* RNQuickLookView */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +93,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				35B14B482803C0C6009B3E6D /* MBProgressHUD */,
 				35B14B46280188EC009B3E6D /* RNDocumentCamera.m */,
 				35B14B45280188D8009B3E6D /* RNDocumentCamera.h */,
 				35C7E6B327FE799700D4A694 /* RNQuickLookView */,
@@ -142,6 +165,7 @@
 				35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */,
 				35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */,
 				35B14B47280188EC009B3E6D /* RNDocumentCamera.m in Sources */,
+				35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
