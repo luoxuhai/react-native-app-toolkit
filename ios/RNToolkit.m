@@ -1,12 +1,14 @@
 #import "RNToolkit.h"
 #import "RNMediaLibrary.h"
 #import "RNDocumentCamera.h"
+#import "RTKVideoEditor.h"
 
 static NSString* const TMP_DIRECTORY = @"react-native-kit/";
 
 @interface RNToolkit()
 
 @property (nonatomic, strong) RNDocumentCamera *documentCamera;
+@property (nonatomic, strong) RTKVideoEditor *videoEditor;
 
 @end
 
@@ -24,6 +26,7 @@ static NSString* const TMP_DIRECTORY = @"react-native-kit/";
      }
     
     self.documentCamera = [[RNDocumentCamera alloc] init];
+    self.videoEditor = [[RTKVideoEditor alloc] init];
     return self;
 }
 
@@ -67,6 +70,22 @@ RCT_REMAP_METHOD(openDocumentCamera,
                  withRejecter:(RCTPromiseRejectBlock)reject) {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.documentCamera openDocumentCamera:options
+                                completion:^(NSString *error, NSDictionary *result) {
+            if (error == nil) {
+                resolve(result);
+            } else {
+                reject(@"ERROR", error, nil);
+            }
+        }];
+    });
+}
+
+RCT_REMAP_METHOD(openVideoEditor,
+                 withOptions: (NSDictionary *)options
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.videoEditor openWithOptions:options
                                 completion:^(NSString *error, NSDictionary *result) {
             if (error == nil) {
                 resolve(result);

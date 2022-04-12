@@ -46,4 +46,18 @@ export function openDocumentCamera(
   });
 }
 
+/**
+ * Open a video editor for trimming video frames.
+ * @returns Promise
+ */
+export function openVideoEditor(
+  source: string,
+  options?: VideoEditorOptions
+): Promise<VideoEditorResult> {
+  return RNToolkit.openVideoEditor({
+    source,
+    ...options,
+  });
+}
+
 export { QuickLookView };

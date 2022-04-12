@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		35B14B47280188EC009B3E6D /* RNDocumentCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B46280188EC009B3E6D /* RNDocumentCamera.m */; };
 		35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B4D2803C0F3009B3E6D /* MBProgressHUD.m */; };
+		35B14F5C2805058B009B3E6D /* RTKVideoEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */; };
 		35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6A927FE785100D4A694 /* RNQuickLookView.m */; };
 		35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,8 @@
 		35B14B4D2803C0F3009B3E6D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../../../MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
 		35B14B4E2803C0F3009B3E6D /* MBProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD-Prefix.pch"; path = "../../../MBProgressHUD/MBProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
 		35B14B4F2803C0F3009B3E6D /* MBProgressHUD.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MBProgressHUD.podspec; path = ../../../MBProgressHUD/MBProgressHUD.podspec; sourceTree = "<group>"; };
+		35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKVideoEditor.m; sourceTree = "<group>"; };
+		35B14F5D28050595009B3E6D /* RTKVideoEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTKVideoEditor.h; sourceTree = "<group>"; };
 		35C7E6A927FE785100D4A694 /* RNQuickLookView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookView.m; sourceTree = "<group>"; };
 		35C7E6AC27FE787B00D4A694 /* RNQuickLookView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNQuickLookView.h; sourceTree = "<group>"; };
 		35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookManager.m; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				35B14F5D28050595009B3E6D /* RTKVideoEditor.h */,
+				35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */,
 				35B14B482803C0C6009B3E6D /* MBProgressHUD */,
 				35B14B46280188EC009B3E6D /* RNDocumentCamera.m */,
 				35B14B45280188D8009B3E6D /* RNDocumentCamera.h */,
@@ -163,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */,
+				35B14F5C2805058B009B3E6D /* RTKVideoEditor.m in Sources */,
 				35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */,
 				35B14B47280188EC009B3E6D /* RNDocumentCamera.m in Sources */,
 				35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */,

@@ -47,3 +47,22 @@ interface DocumentCameraResult {
   type: DocumentCameraResultType;
   source: string | string[];
 }
+
+interface VideoEditorOptions {
+  /**
+   * @default 10000
+   */
+  maxDuration?: number;
+  /**
+   * @default
+   */
+  quality?: number;
+}
+
+interface VideoEditorResult {
+  uri: string;
+  width: number;
+  height: number;
+  duration: number;
+  size: number;
+}
