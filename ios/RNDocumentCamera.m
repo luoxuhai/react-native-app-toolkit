@@ -36,9 +36,10 @@ RCT_ENUM_CONVERTER(
 }
 
 - (void)openDocumentCamera:(NSDictionary *)options
-                completion:(void (^)(NSString *error, NSDictionary *result))completion {
+                completion:(void (^)(NSString *error, NSDictionary *result))completion
+{
     if (@available(iOS 13.0, *)) {
-        if (VNDocumentCameraViewController.isSupported) {
+        if ([self isSupported]) {
             self.options = options;
             self.completion = completion;
             VNDocumentCameraViewController* documentCameraViewController = [[VNDocumentCameraViewController alloc] init];
@@ -55,6 +56,15 @@ RCT_ENUM_CONVERTER(
     }
 }
 
+- (BOOL)isSupported
+{
+    if (@available(iOS 13.0, *)) {
+        return VNDocumentCameraViewController.isSupported;
+    } else {
+        return NO;
+    }
+}
+
 - (void) dismissViewController: (VNDocumentCameraViewController *)controller  API_AVAILABLE(ios(13.0)){
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
@@ -68,7 +78,6 @@ RCT_ENUM_CONVERTER(
     }
     NSData *data = [pdfDocument dataRepresentation];
     NSString *dest = [NSString stringWithFormat:@"%@%@.%@", self.directory, [[NSUUID UUID] UUIDString], @"pdf"];
-    NSLog(@"-----------dest--------%@", dest);
     if (![data writeToFile:dest atomically:YES]) {
         self.completion(@"Can't write to file.", nil);
         return nil;

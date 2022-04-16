@@ -80,10 +80,14 @@ RCT_REMAP_METHOD(openDocumentCamera,
     });
 }
 
-RCT_REMAP_METHOD(openVideoEditor,
-                 withOptions: (NSDictionary *)options
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(isDocumentCameraSupported)
+{
+    return @([self.documentCamera isSupported]);
+}
+
+RCT_EXPORT_METHOD(openVideoEditor:(NSDictionary *)options
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.videoEditor openWithOptions:options
                                 completion:^(NSString *error, NSDictionary *result) {

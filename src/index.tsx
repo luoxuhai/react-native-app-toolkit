@@ -46,6 +46,10 @@ export function openDocumentCamera(
   });
 }
 
+export function isDocumentCameraSupported() {
+  return RNToolkit.isDocumentCameraSupported();
+}
+
 /**
  * Open a video editor for trimming video frames.
  * @returns Promise
@@ -58,6 +62,14 @@ export function openVideoEditor(
     source,
     ...options,
   });
+}
+
+/**
+ * Save file to system document
+ * @returns Promise
+ */
+export function saveToDocument(source: string): Promise<void> {
+  return RNToolkit.saveToDocument(source);
 }
 
 export { QuickLookView };

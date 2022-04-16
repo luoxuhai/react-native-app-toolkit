@@ -27,9 +27,9 @@ static NSString* const TMP_DIRECTORY = @"react-native-kit/";
 - (void) openWithOptions:(NSDictionary *)options completion:(void (^)(NSString *, NSDictionary *))completion {
     self.options = options;
     self.completion = completion;
-    int maxDuration = options[@"maxDuration"] ?: 1;
-    float quality = options[@"quality"] ?: 1;
-    NSString path = options[@"source"];
+    int maxDuration = [options[@"maxDuration"] intValue] ?: 1;
+    float quality = [options[@"quality"] floatValue] ?: 1;
+    NSString *path = options[@"source"];
     
     if (path == nil) {
         self.completion(@"Source cannot be nil", nil);

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354BEE3E28065BD10018255B /* RTKDocumentInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 354BEE3D28065BD10018255B /* RTKDocumentInteraction.m */; };
 		35B14B47280188EC009B3E6D /* RNDocumentCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B46280188EC009B3E6D /* RNDocumentCamera.m */; };
 		35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B4D2803C0F3009B3E6D /* MBProgressHUD.m */; };
 		35B14F5C2805058B009B3E6D /* RTKVideoEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNToolkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNToolkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		354BEE3C28065BD10018255B /* RTKDocumentInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTKDocumentInteraction.h; sourceTree = "<group>"; };
+		354BEE3D28065BD10018255B /* RTKDocumentInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTKDocumentInteraction.m; sourceTree = "<group>"; };
 		35B14B45280188D8009B3E6D /* RNDocumentCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNDocumentCamera.h; sourceTree = "<group>"; };
 		35B14B46280188EC009B3E6D /* RNDocumentCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNDocumentCamera.m; sourceTree = "<group>"; };
 		35B14B492803C0F3009B3E6D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../../MBProgressHUD/LICENSE; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				354BEE3C28065BD10018255B /* RTKDocumentInteraction.h */,
+				354BEE3D28065BD10018255B /* RTKDocumentInteraction.m */,
 				35B14F5D28050595009B3E6D /* RTKVideoEditor.h */,
 				35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */,
 				35B14B482803C0C6009B3E6D /* MBProgressHUD */,
@@ -170,6 +175,7 @@
 				35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */,
 				35B14F5C2805058B009B3E6D /* RTKVideoEditor.m in Sources */,
 				35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */,
+				354BEE3E28065BD10018255B /* RTKDocumentInteraction.m in Sources */,
 				35B14B47280188EC009B3E6D /* RNDocumentCamera.m in Sources */,
 				35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */,
 			);
