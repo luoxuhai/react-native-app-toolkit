@@ -2,7 +2,7 @@
 #import <PDFKit/PDFKit.h>
 #import <React/RCTUtils.h>
 #import <React/RCTConvert.h>
-#import "RNDocumentCamera.h"
+#import "RTKDocumentCamera.h"
 
 static NSString* const TMP_DIRECTORY = @"react-native-kit/";
 
@@ -18,15 +18,16 @@ RCT_ENUM_CONVERTER(
     integerValue)
 @end
 
-@interface RNDocumentCamera() <VNDocumentCameraViewControllerDelegate>
+@interface RTKDocumentCamera() <VNDocumentCameraViewControllerDelegate>
 
 @property (nonatomic, copy) NSDictionary *options;
 @property (nonatomic, copy) NSString *directory;
-@property (nonatomic, copy) void (^completion)(NSString *error, NSDictionary *result);
+@property (nonatomic, copy) RCTPromiseResolveBlock resolve;
+@property (nonatomic, copy) RCTPromiseRejectBlock reject;
 
 @end
 
-@implementation RNDocumentCamera
+@implementation RTKDocumentCamera
 
 - (instancetype)init {
     if ((self = [super init])) {
@@ -35,33 +36,41 @@ RCT_ENUM_CONVERTER(
     return self;
 }
 
-- (void)openDocumentCamera:(NSDictionary *)options
-                completion:(void (^)(NSString *error, NSDictionary *result))completion
+RCT_EXPORT_MODULE(RTKDocumentCamera)
+
+RCT_EXPORT_METHOD(openDocumentCamera:(NSDictionary *)options
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-    if (@available(iOS 13.0, *)) {
-        if ([self isSupported]) {
-            self.options = options;
-            self.completion = completion;
-            VNDocumentCameraViewController* documentCameraViewController = [[VNDocumentCameraViewController alloc] init];
-            
-            documentCameraViewController.delegate = self;
-            
-            UIViewController *rootViewController = RCTPresentedViewController();
-            [rootViewController presentViewController:documentCameraViewController animated:YES completion:nil];
+    self.resolve = resolve;
+    self.reject = reject;
+    self.options = options;
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (@available(iOS 13.0, *)) {
+            if (VNDocumentCameraViewController.isSupported) {
+                VNDocumentCameraViewController* documentCameraViewController = [[VNDocumentCameraViewController alloc] init];
+                
+                documentCameraViewController.delegate = self;
+                
+                UIViewController *rootViewController = RCTPresentedViewController();
+                [rootViewController presentViewController:documentCameraViewController animated:YES completion:nil];
+            } else {
+                self.reject(@"ERROR",@"The current device doesn't support document scanning", nil);
+            }
         } else {
-            completion(@"The current device doesn't support document scanning", nil);
+            self.reject(@"ERROR", @"Only available on iOS 13.0 or newer", nil);
         }
-    } else {
-        completion(@"Only available on iOS 13.0 or newer", nil);
-    }
+    });
 }
 
-- (BOOL)isSupported
+RCT_EXPORT_METHOD(isSupported:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 {
     if (@available(iOS 13.0, *)) {
-        return VNDocumentCameraViewController.isSupported;
+        resolve(@(VNDocumentCameraViewController.isSupported));
     } else {
-        return NO;
+        resolve(@(NO));
     }
 }
 
@@ -79,7 +88,7 @@ RCT_ENUM_CONVERTER(
     NSData *data = [pdfDocument dataRepresentation];
     NSString *dest = [NSString stringWithFormat:@"%@%@.%@", self.directory, [[NSUUID UUID] UUIDString], @"pdf"];
     if (![data writeToFile:dest atomically:YES]) {
-        self.completion(@"Can't write to file.", nil);
+        self.reject(@"ERROR", @"Can't write to file.", nil);
         return nil;
     }
     return dest;
@@ -105,22 +114,22 @@ RCT_ENUM_CONVERTER(
             NSString *dest = [NSString stringWithFormat:@"%@%@.%@", self.directory, [[NSUUID UUID] UUIDString], @"jpg"];
             NSData *data = UIImageJPEGRepresentation(images[i], [quality floatValue]);
             if (![data writeToFile:dest atomically:YES]) {
-                self.completion(@"Can't write to file.", nil);
+                self.reject(@"ERROR", @"Can't write to file.", nil);
                 [self dismissViewController:controller];
                 return;
             }
             [source addObject:dest];
         }
-        self.completion(nil, @{
+        self.resolve(@{
             @"type":self.options[@"type"],
             @"source":source
         });
     } else {
        NSString *pdfPath = [self imagesToPDF:images];
         if (pdfPath) {
-            self.completion(nil, @{
-                 @"type":self.options[@"type"],
-                 @"source":pdfPath
+            self.resolve(@{
+                @"type":self.options[@"type"],
+                @"source":pdfPath
             });
         }
     }
@@ -133,7 +142,7 @@ RCT_ENUM_CONVERTER(
 }
 
 - (void)documentCameraViewController:(VNDocumentCameraViewController *)controller didFailWithError:(NSError *)error API_AVAILABLE(ios(13)){
-    self.completion(error.localizedDescription, nil);
+    self.reject(@"ERROR", error.localizedDescription, error);
     [self dismissViewController:controller];
 }
 

@@ -1,9 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
+ * React Native App Toolkit Example
+ * https://github.com/luoxuhai/react-native-app-toolkit
  *
  * @format
  */
@@ -18,7 +15,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+import * as Toolkit from 'react-native-app-toolkit';
 import {
   Colors,
   DebugInstructions,

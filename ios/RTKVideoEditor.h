@@ -1,6 +1,5 @@
-@interface RTKVideoEditor : NSObject
+#import <React/RCTBridgeModule.h>
 
-- (void)openWithOptions:(NSDictionary *)options
-                          completion:(void (^)(NSString *error, NSDictionary *result))completion;
+@interface RTKVideoEditor : NSObject <RCTBridgeModule>
 
 @end
