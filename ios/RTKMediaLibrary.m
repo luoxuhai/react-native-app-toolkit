@@ -1,7 +1,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVAsset.h>
 #import <UIKit/UIKit.h>
-#import "RNMediaLibrary.h"
+#import "RTKMediaLibrary.h"
 
 static NSString* const OPTIONS_KEY_QUALITY = @"quality";
 static NSString* const OPTIONS_KEY_TIME = @"time";
@@ -9,20 +9,25 @@ static NSString* const OPTIONS_KEY_INCLUDE_SIZE = @"includeSize";
 static NSString* const TMP_DIRECTORY = @"react-native-kit/";
 static NSString* const OPTIONS_KEY_HEADERS = @"headers";
 
-@interface RNMediaLibrary()
+@interface RTKMediaLibrary()
 
 @property (nonatomic, copy) NSString *directory;
 
 @end
 
-@implementation RNMediaLibrary
+@implementation RTKMediaLibrary
 
 -(id)init {
     self.directory = [NSTemporaryDirectory() stringByAppendingString:TMP_DIRECTORY];
     return self;
 }
 
--(NSDictionary *)getVideoThumbnail:(nonnull NSString *)path withOptions:(nullable NSDictionary *)options
+RCT_EXPORT_MODULE(RTKMediaLibrary)
+
+RCT_EXPORT_METHOD(getVideoThumbnail:(NSString *)path
+                  options:( NSDictionary *)options
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 {
     NSURL *url = [NSURL URLWithString:path];
     long timeOption = [options[OPTIONS_KEY_TIME] integerValue] ?: 0;
@@ -42,9 +47,7 @@ static NSString* const OPTIONS_KEY_HEADERS = @"headers";
     
     CGImageRef imgRef = [generator copyCGImageAtTime:time actualTime:NULL error:&err];
     if (err) {
-        return @{
-            @"error": err.localizedFailureReason,
-        };
+        reject(@"ERROR",err.localizedFailureReason,nil);
      }
     
     UIImage *thumbnail = [UIImage imageWithCGImage:imgRef];
@@ -54,9 +57,7 @@ static NSString* const OPTIONS_KEY_HEADERS = @"headers";
     NSData *data = UIImageJPEGRepresentation(thumbnail, quality);
 
     if (![data writeToFile:dest atomically:YES]) {
-        return @{
-            @"error": @"Can't write to file.",
-        };
+        reject(@"ERROR",@"Can't write to file.",nil);
     }
     
     NSNumber *fileSize = nil;
@@ -69,12 +70,12 @@ static NSString* const OPTIONS_KEY_HEADERS = @"headers";
 
     CGImageRelease(imgRef);
     
-    return @{
+    resolve(@{
         @"uri": dest,
         @"width": @(thumbnail.size.width),
         @"height": @(thumbnail.size.height),
         @"size": (fileSize) ?: [NSNull null]
-    };
+    });
 }
 
 @end

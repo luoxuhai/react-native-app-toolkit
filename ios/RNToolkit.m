@@ -1,5 +1,4 @@
 #import "RNToolkit.h"
-#import "RNMediaLibrary.h"
 
 static NSString* const TMP_DIRECTORY = @"react-native-kit/";
 
@@ -24,14 +23,19 @@ static NSString* const TMP_DIRECTORY = @"react-native-kit/";
 
 RCT_EXPORT_MODULE(RNToolkit)
 
-RCT_REMAP_METHOD(getVideoThumbnail,
-                 withPath:(nonnull NSString *)path widthOptions:(NSDictionary *)options
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXPORT_METHOD(init:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject)
 {
-    RNMediaLibrary *mediaLibrary = [[RNMediaLibrary alloc] init];
-    NSDictionary *result = [mediaLibrary getVideoThumbnail:path withOptions: options];
-    resolve(result);
+    NSString *directory = [NSTemporaryDirectory() stringByAppendingString:TMP_DIRECTORY];
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+
+    BOOL isDir = YES;
+    BOOL exists = [fileManager fileExistsAtPath:directory isDirectory:&isDir];
+    if (!exists) {
+        [fileManager createDirectoryAtPath: directory
+                                  withIntermediateDirectories:YES attributes:nil error:nil];
+     }
+    resolve(directory);
 }
 
 @end

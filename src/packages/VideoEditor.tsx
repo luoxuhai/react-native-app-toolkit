@@ -1,14 +1,14 @@
-import { RNToolkit } from '../internal/nativeInterface';
+import { RTKVideoEditor } from '../internal/nativeInterface';
 
 /**
  * Open a video editor for trimming video frames.
  * @returns Promise
  */
-export function openVideoEditor(
+export function open(
   source: string,
   options?: VideoEditorOptions
 ): Promise<VideoEditorResult> {
-  return RNToolkit.openVideoEditor({
+  return RTKVideoEditor.openVideoEditor({
     source,
     ...options,
   });

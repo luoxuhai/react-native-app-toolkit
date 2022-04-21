@@ -11,8 +11,8 @@
 		35B14B47280188EC009B3E6D /* RTKDocumentCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B46280188EC009B3E6D /* RTKDocumentCamera.m */; };
 		35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B4D2803C0F3009B3E6D /* MBProgressHUD.m */; };
 		35B14F5C2805058B009B3E6D /* RTKVideoEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */; };
-		35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6A927FE785100D4A694 /* RNQuickLookView.m */; };
-		35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */; };
+		35C7E6AA27FE785100D4A694 /* RTKQuickLookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6A927FE785100D4A694 /* RTKQuickLookView.m */; };
+		35C7E6AE27FE789500D4A694 /* RTKQuickLookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6AD27FE789500D4A694 /* RTKQuickLookManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,12 +42,12 @@
 		35B14B4F2803C0F3009B3E6D /* MBProgressHUD.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MBProgressHUD.podspec; path = ../../../MBProgressHUD/MBProgressHUD.podspec; sourceTree = "<group>"; };
 		35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKVideoEditor.m; sourceTree = "<group>"; };
 		35B14F5D28050595009B3E6D /* RTKVideoEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTKVideoEditor.h; sourceTree = "<group>"; };
-		35C7E6A927FE785100D4A694 /* RNQuickLookView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookView.m; sourceTree = "<group>"; };
-		35C7E6AC27FE787B00D4A694 /* RNQuickLookView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNQuickLookView.h; sourceTree = "<group>"; };
-		35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNQuickLookManager.m; sourceTree = "<group>"; };
-		35C7E6AF27FE78A600D4A694 /* RNQuickLookManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNQuickLookManager.h; sourceTree = "<group>"; };
-		35DB305827EF6D1F00D84FE3 /* RNMediaLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNMediaLibrary.m; sourceTree = "<group>"; };
-		35DB305927EF6D3A00D84FE3 /* RNMediaLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNMediaLibrary.h; sourceTree = "<group>"; };
+		35C7E6A927FE785100D4A694 /* RTKQuickLookView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKQuickLookView.m; sourceTree = "<group>"; };
+		35C7E6AC27FE787B00D4A694 /* RTKQuickLookView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTKQuickLookView.h; sourceTree = "<group>"; };
+		35C7E6AD27FE789500D4A694 /* RTKQuickLookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKQuickLookManager.m; sourceTree = "<group>"; };
+		35C7E6AF27FE78A600D4A694 /* RTKQuickLookManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTKQuickLookManager.h; sourceTree = "<group>"; };
+		35DB305827EF6D1F00D84FE3 /* RTKMediaLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKMediaLibrary.m; sourceTree = "<group>"; };
+		35DB305927EF6D3A00D84FE3 /* RTKMediaLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTKMediaLibrary.h; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNToolkit.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNToolkit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,15 +85,15 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		35C7E6B327FE799700D4A694 /* RNQuickLookView */ = {
+		35C7E6B327FE799700D4A694 /* RTKQuickLookView */ = {
 			isa = PBXGroup;
 			children = (
-				35C7E6A927FE785100D4A694 /* RNQuickLookView.m */,
-				35C7E6AC27FE787B00D4A694 /* RNQuickLookView.h */,
-				35C7E6AD27FE789500D4A694 /* RNQuickLookManager.m */,
-				35C7E6AF27FE78A600D4A694 /* RNQuickLookManager.h */,
+				35C7E6A927FE785100D4A694 /* RTKQuickLookView.m */,
+				35C7E6AC27FE787B00D4A694 /* RTKQuickLookView.h */,
+				35C7E6AD27FE789500D4A694 /* RTKQuickLookManager.m */,
+				35C7E6AF27FE78A600D4A694 /* RTKQuickLookManager.h */,
 			);
-			path = RNQuickLookView;
+			path = RTKQuickLookView;
 			sourceTree = "<group>";
 		};
 		58B511D21A9E6C8500147676 = {
@@ -106,9 +106,9 @@
 				35B14B482803C0C6009B3E6D /* MBProgressHUD */,
 				35B14B46280188EC009B3E6D /* RTKDocumentCamera.m */,
 				35B14B45280188D8009B3E6D /* RTKDocumentCamera.h */,
-				35C7E6B327FE799700D4A694 /* RNQuickLookView */,
-				35DB305927EF6D3A00D84FE3 /* RNMediaLibrary.h */,
-				35DB305827EF6D1F00D84FE3 /* RNMediaLibrary.m */,
+				35C7E6B327FE799700D4A694 /* RTKQuickLookView */,
+				35DB305927EF6D3A00D84FE3 /* RTKMediaLibrary.h */,
+				35DB305827EF6D1F00D84FE3 /* RTKMediaLibrary.m */,
 				B3E7B5881CC2AC0600A0062D /* RNToolkit.h */,
 				B3E7B5891CC2AC0600A0062D /* RNToolkit.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -172,9 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C7E6AE27FE789500D4A694 /* RNQuickLookManager.m in Sources */,
+				35C7E6AE27FE789500D4A694 /* RTKQuickLookManager.m in Sources */,
 				35B14F5C2805058B009B3E6D /* RTKVideoEditor.m in Sources */,
-				35C7E6AA27FE785100D4A694 /* RNQuickLookView.m in Sources */,
+				35C7E6AA27FE785100D4A694 /* RTKQuickLookView.m in Sources */,
 				354BEE40280BB9150018255B /* RTKAppearance.m in Sources */,
 				35B14B47280188EC009B3E6D /* RTKDocumentCamera.m in Sources */,
 				35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */,

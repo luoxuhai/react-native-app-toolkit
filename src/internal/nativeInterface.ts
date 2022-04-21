@@ -6,15 +6,31 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const RNToolkit = NativeModules.RNToolkit
-  ? NativeModules.RNToolkit
-  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+let {
+  RNToolkit,
+  RTKMediaLibrary,
+  RTKVideoEditor,
+  RTKAppearance,
+  RTKDocumentCamera,
+} = NativeModules;
 
-export { RNToolkit };
+if (!RNToolkit) {
+  RNToolkit = new Proxy(
+    {},
+    {
+      get() {
+        throw new Error(LINKING_ERROR);
+      },
+    }
+  );
+}
+
+RNToolkit.init();
+
+export {
+  RNToolkit,
+  RTKMediaLibrary,
+  RTKVideoEditor,
+  RTKAppearance,
+  RTKDocumentCamera,
+};

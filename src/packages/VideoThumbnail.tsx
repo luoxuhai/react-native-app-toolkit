@@ -1,8 +1,8 @@
-import { RNToolkit } from '../internal/nativeInterface';
+import { RTKMediaLibrary } from '../internal/nativeInterface';
 
-export function getVideoThumbnail(
+export function getThumbnail(
   path: string,
   options?: VideoThumbnailOptions
 ): Promise<VideoThumbnailResult> {
-  return RNToolkit.getVideoThumbnail(path, options);
+  return RTKMediaLibrary.getVideoThumbnail(path, options);
 }

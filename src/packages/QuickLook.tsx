@@ -8,8 +8,10 @@ interface QuickLookViewProps extends ViewProps {
   url?: string;
 }
 
-export function QuickLookView(props: QuickLookViewProps) {
-  return <RNQuickLookView {...props} />;
+function QuickLookView(props: QuickLookViewProps) {
+  return <RTKQuickLookView {...props} />;
 }
 
-var RNQuickLookView = requireNativeComponent('RNQuickLookView');
+export { QuickLookView as View };
+
+var RTKQuickLookView = requireNativeComponent('RTKQuickLookView');

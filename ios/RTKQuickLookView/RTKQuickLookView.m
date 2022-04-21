@@ -1,21 +1,14 @@
-//
-//  RNQuickLookView.m
-//  RNToolkit
-//
-//  Created by 罗绪海 on 2022/4/3.
-//
-
 #import <QuickLook/QuickLook.h>
-#import "RNQuickLookView.h"
+#import "RTKQuickLookView.h"
 
-@interface RNQuickLookView () <QLPreviewControllerDataSource, QLPreviewControllerDelegate>
+@interface RTKQuickLookView () <QLPreviewControllerDataSource, QLPreviewControllerDelegate>
 
 @property QLPreviewController* controller;
 
 @end
 
 
-@implementation RNQuickLookView
+@implementation RTKQuickLookView
 
 - (id)init {
     self = [super init];
