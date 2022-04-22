@@ -11,6 +11,7 @@
 		35B14B47280188EC009B3E6D /* RTKDocumentCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B46280188EC009B3E6D /* RTKDocumentCamera.m */; };
 		35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14B4D2803C0F3009B3E6D /* MBProgressHUD.m */; };
 		35B14F5C2805058B009B3E6D /* RTKVideoEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */; };
+		35BF5A902811B2B40094B49B /* RCTConvert+RNToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BF5A8F2811B2B40094B49B /* RCTConvert+RNToolkit.m */; };
 		35C7E6AA27FE785100D4A694 /* RTKQuickLookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6A927FE785100D4A694 /* RTKQuickLookView.m */; };
 		35C7E6AE27FE789500D4A694 /* RTKQuickLookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7E6AD27FE789500D4A694 /* RTKQuickLookManager.m */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,8 @@
 		35B14B4F2803C0F3009B3E6D /* MBProgressHUD.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MBProgressHUD.podspec; path = ../../../MBProgressHUD/MBProgressHUD.podspec; sourceTree = "<group>"; };
 		35B14F5B2805058B009B3E6D /* RTKVideoEditor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKVideoEditor.m; sourceTree = "<group>"; };
 		35B14F5D28050595009B3E6D /* RTKVideoEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTKVideoEditor.h; sourceTree = "<group>"; };
+		35BF5A8E2811B29D0094B49B /* RCTConvert+RNToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+RNToolkit.h"; sourceTree = "<group>"; };
+		35BF5A8F2811B2B40094B49B /* RCTConvert+RNToolkit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+RNToolkit.m"; sourceTree = "<group>"; };
 		35C7E6A927FE785100D4A694 /* RTKQuickLookView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKQuickLookView.m; sourceTree = "<group>"; };
 		35C7E6AC27FE787B00D4A694 /* RTKQuickLookView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTKQuickLookView.h; sourceTree = "<group>"; };
 		35C7E6AD27FE789500D4A694 /* RTKQuickLookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTKQuickLookManager.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				35BF5A8F2811B2B40094B49B /* RCTConvert+RNToolkit.m */,
+				35BF5A8E2811B29D0094B49B /* RCTConvert+RNToolkit.h */,
 				354BEE41280BB9240018255B /* RTKAppearance.h */,
 				354BEE3F280BB9150018255B /* RTKAppearance.m */,
 				35B14F5D28050595009B3E6D /* RTKVideoEditor.h */,
@@ -178,6 +183,7 @@
 				354BEE40280BB9150018255B /* RTKAppearance.m in Sources */,
 				35B14B47280188EC009B3E6D /* RTKDocumentCamera.m in Sources */,
 				35B14B502803C0F3009B3E6D /* MBProgressHUD.m in Sources */,
+				35BF5A902811B2B40094B49B /* RCTConvert+RNToolkit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

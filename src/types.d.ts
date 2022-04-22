@@ -1,3 +1,20 @@
+type TransitionStyle =
+  | 'coverVertical'
+  | 'flipHorizontal'
+  | 'crossDissolve'
+  | 'partialCurl';
+
+type PresentationStyle =
+  | 'fullScreen'
+  | 'pageSheet'
+  | 'formSheet'
+  | 'popover'
+  | 'none'
+  | 'currentContext'
+  | 'overFullScreen'
+  | 'overCurrentContext'
+  | 'default';
+
 interface VideoThumbnailOptions {
   /**
    * 输出图像质量
@@ -50,13 +67,23 @@ interface DocumentCameraResult {
 
 interface VideoEditorOptions {
   /**
-   * @default 10000
+   * The maximum duration, in seconds, permitted for trimmed movies saved by the video editor.
+   * The system-enforced maximum duration for a video recording is 10 minutes; you can set this value to 10 minutes or less. The default value for this property is also 10 minutes.
+   * @default 600
    */
   maxDuration?: number;
   /**
-   * @default
+   * @default 'high'
    */
-  quality?: number;
+  quality?: 'high' | 'medium' | 'low';
+  /**
+   * @default 'overFullScreen'
+   */
+  transitionStyle?: TransitionStyle;
+  /**
+   * @default 'coverVertical'
+   */
+  presentationStyle?: PresentationStyle;
 }
 
 interface VideoEditorResult {

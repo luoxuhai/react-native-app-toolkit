@@ -3,6 +3,7 @@
 #import <React/RCTConvert.h>
 #import <Foundation/Foundation.h>
 #import "RTKVideoEditor.h"
+#import "RCTConvert+RNToolkit.h"
 
 static NSString* const TMP_DIRECTORY = @"react-native-kit/";
 
@@ -32,8 +33,10 @@ RCT_EXPORT_METHOD(openVideoEditor:(NSDictionary *)options
     self.resolve = resolve;
     self.reject = reject;
     int maxDuration = [options[@"maxDuration"] intValue] ?: 1;
-   // float quality = [options[@"quality"] floatValue] ?: 1;
     NSString *path = options[@"source"];
+    UIImagePickerControllerQualityType quality = [RCTConvert UIImagePickerControllerQualityType:options[@"quality"]];
+    UIModalPresentationStyle presentationStyle = [RCTConvert UIModalPresentationStyle:options[@"presentationStyle"]];
+    UIModalTransitionStyle transitionStyle = [RCTConvert UIModalTransitionStyle:options[@"transitionStyle"]];
     
     if (path == nil) {
         reject(@"ERROR", @"Source cannot be nil", nil);
@@ -42,10 +45,11 @@ RCT_EXPORT_METHOD(openVideoEditor:(NSDictionary *)options
 
     dispatch_async(dispatch_get_main_queue(), ^{
         UIVideoEditorController *videoEditorController = [UIVideoEditorController new];
-        
         videoEditorController.videoPath = path;
         videoEditorController.videoMaximumDuration = maxDuration;
-        videoEditorController.videoQuality = maxDuration;
+        videoEditorController.videoQuality = quality;
+        videoEditorController.modalPresentationStyle = presentationStyle;
+        videoEditorController.modalTransitionStyle = transitionStyle;
         videoEditorController.delegate = self;
 
         UIViewController *rootViewController = RCTPresentedViewController();
@@ -53,20 +57,22 @@ RCT_EXPORT_METHOD(openVideoEditor:(NSDictionary *)options
     });
 }
 
-
-- (void) openWithOptions:(NSDictionary *)options completion:(void (^)(NSString *, NSDictionary *))completion {
-
+RCT_EXPORT_METHOD(canEdit:(NSString *)path
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
+    resolve(@([UIVideoEditorController canEditVideoAtPath:path]));
 }
 
 #pragma mark - UIVideoEditorControllerDelegate
 
 - (void)videoEditorController:(UIVideoEditorController *)editor didSaveEditedVideoToPath:(NSString *)editedVideoPath {
-    NSLog(@"+++++++++++++++%@",editedVideoPath);
     self.resolve(@{ @"uri": editedVideoPath });
+    [editor dismissViewControllerAnimated:YES completion:nil];
 }
  
 - (void)videoEditorController:(UIVideoEditorController *)editor didFailWithError:(NSError *)error {
     self.reject(@"ERROR", error.localizedDescription, nil);
+    [editor dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
