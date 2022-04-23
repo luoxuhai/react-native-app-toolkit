@@ -14,4 +14,4 @@ function QuickLookView(props: QuickLookViewProps) {
 
 export { QuickLookView as View };
 
-var RTKQuickLookView = requireNativeComponent('RTKQuickLookView');
+var RTKQuickLookView = requireNativeComponent('RTKQuickLook');

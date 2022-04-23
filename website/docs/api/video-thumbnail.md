@@ -1,11 +1,11 @@
-# getVideoThumbnail
+# VideoThumbnail
 
 Allows you to generate images from video files to use as thumbnails
 
 ```typescript
-import * as Toolkit from 'react-native-app-toolkit';
+import { VideoThumbnail } from 'react-native-app-toolkit';
 
-Toolkit.getVideoThumbnail(
+VideoThumbnail.getThumbnail(
   'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
   {
     time: 1000, // ms

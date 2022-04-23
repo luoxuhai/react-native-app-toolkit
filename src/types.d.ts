@@ -88,8 +88,32 @@ interface VideoEditorOptions {
 
 interface VideoEditorResult {
   uri: string;
+  // width: number;
+  // height: number;
+  // duration: number;
+  // size: number;
+}
+
+interface ThumbnailGeneratorOptions {
+  path: string;
   width: number;
   height: number;
-  duration: number;
-  size: number;
+  scale?: number;
+  /**
+   * @default false
+   */
+  iconMode?: boolean;
+  /**
+   * @default 0
+   */
+  minimumDimension?: number;
+  toFileAtURL?: string;
+  /**
+   * @default 'thumbnail'
+   */
+  representationType?: 'icon' | 'lowQualityThumbnail' | 'thumbnail';
+}
+
+interface ThumbnailGeneratorResult {
+  path: string;
 }

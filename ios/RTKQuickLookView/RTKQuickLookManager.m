@@ -4,7 +4,7 @@
 
 @implementation RTKQuickLookManager
 
-RCT_EXPORT_MODULE(RTKQuickLookView)
+RCT_EXPORT_MODULE(RTKQuickLook)
 
 - (UIView *) view  {
     return [[RTKQuickLookView alloc] init];

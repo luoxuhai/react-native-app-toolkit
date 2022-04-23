@@ -42,4 +42,12 @@ RCT_ENUM_CONVERTER(UIImagePickerControllerQualityType,(@{
                     }),
                    UIImagePickerControllerQualityTypeHigh, integerValue)
 
+RCT_ENUM_CONVERTER(QLThumbnailGenerationRequestRepresentationTypes,(@{
+                      @"icon" : @(QLThumbnailGenerationRequestRepresentationTypeIcon),
+                      @"lowQualityThumbnail" : @(QLThumbnailGenerationRequestRepresentationTypeLowQualityThumbnail),
+                      @"thumbnail" : @(QLThumbnailGenerationRequestRepresentationTypeThumbnail),
+                      @"all" : @(QLThumbnailGenerationRequestRepresentationTypeAll),
+                    }),
+                   QLThumbnailGenerationRequestRepresentationTypeThumbnail, integerValue)
+
 @end
