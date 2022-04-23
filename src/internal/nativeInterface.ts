@@ -12,6 +12,7 @@ let {
   RTKVideoEditor,
   RTKAppearance,
   RTKDocumentCamera,
+  RTKThumbnailGenerator,
 } = NativeModules;
 
 if (!RNToolkit) {
@@ -33,4 +34,5 @@ export {
   RTKVideoEditor,
   RTKAppearance,
   RTKDocumentCamera,
+  RTKThumbnailGenerator,
 };

@@ -1,4 +1,4 @@
-# QuickLookView
+# QuickLook
 
 Preview files using QuickLook framework. Support for local and remote files.
 QuickLook can generate previews for common file types, including:
@@ -14,11 +14,11 @@ QuickLook can generate previews for common file types, including:
 ### Example:
 
 ```tsx
-import { QuickLookView } from 'react-native-app-toolkit';
+import { QuickLook } from 'react-native-app-toolkit';
 
 function Home() {
   return (
-    <QuickLookView
+    <QuickLook.View
       style={{ flex: 1 }}
       // An URL of the file, local or remote.
       url="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"

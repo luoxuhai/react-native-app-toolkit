@@ -4,29 +4,16 @@ sidebar_position: 2
 
 # Usage
 
-## Components example
+## Example
 
 ```tsx
-import { QuickLookView } from 'react-native-app-toolkit';
+import { ThumbnailGenerator } from 'react-native-app-toolkit';
 
-function Home() {
-  return (
-    <QuickLookView
-      style={{ flex: 1 }}
-      url="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-    />
-  );
-}
-```
-
-## API example
-
-```javascript
-import * as Toolkit from 'react-native-app-toolkit';
-
-Toolkit.getVideoThumbnail(
-  'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'
-).then((res) => {
-  // VideoThumbnailsResult
+ThumbnailGenerator.generate({
+  path: '/private/var/Application/9DE1991A-EFA0-4507-AA2E-6FC9E4BE3ADB.pdf',
+  width: 100,
+  height: 100,
+}).then((res) => {
+  // ThumbnailGeneratorResult
 });
 ```

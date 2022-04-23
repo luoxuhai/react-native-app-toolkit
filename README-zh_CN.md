@@ -28,8 +28,7 @@ npm i react-native-app-toolkit --save
 ## 文档
 
 - [入门](https://luoxuhai.github.io/react-native-app-toolkit/docs/getting-started)
-- [组件参考](https://luoxuhai.github.io/react-native-app-toolkit/docs/components/quick-look-view)
-- [API 参考](https://luoxuhai.github.io/react-native-app-toolkit/docs/api/get-video-thumbnail)
+- [API 参考](https://luoxuhai.github.io/react-native-app-toolkit/docs/api/appearance)
 
 ## 社区
 

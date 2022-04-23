@@ -28,8 +28,7 @@ Now run a simple: `npx pod-install` or `cd ios && pod install`. After that, you 
 ## Documentation
 
 - [Getting Started](https://luoxuhai.github.io/react-native-app-toolkit/docs/getting-started)
-- [Components Reference](https://luoxuhai.github.io/react-native-app-toolkit/docs/components/quick-look-view)
-- [API Reference](https://luoxuhai.github.io/react-native-app-toolkit/docs/api/get-video-thumbnail)
+- [API Reference](https://luoxuhai.github.io/react-native-app-toolkit/docs/api/appearance)
 
 ## Community
 
